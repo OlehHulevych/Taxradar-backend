@@ -6,7 +6,7 @@ import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EntityScan("com.taxradar.backend.domain.entities")
-@SpringBootApplication(scanBasePackages = "com.taxradar.backend.domain")
+@SpringBootApplication(scanBasePackages = "com.taxradar.backend")
 @EnableJpaRepositories("com.taxradar.backend.infrastructure.repositories")
 public class TaxRadarBackendApplication {
 
