@@ -7,7 +7,7 @@ import com.taxradar.backend.application.ports.UserRepositoryPort;
 import com.taxradar.backend.domain.entities.Invoice;
 import com.taxradar.backend.domain.enums.Currency;
 import com.taxradar.backend.domain.enums.InvoiceStatus;
-import com.taxradar.backend.infrastructure.repositories.UserRepository;
+
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
