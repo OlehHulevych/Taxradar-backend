@@ -54,9 +54,9 @@ public class Invoice extends BaseEntity {
 
     protected Invoice(){}
 
-    public Invoice(String invoiceNumber, InvoiceStatus status, User issuer, String clientName, String clientIco, BigDecimal amountWithoutVat, BigDecimal vatRate, BigDecimal amountWithVat, Currency currency, LocalDate dueDate, LocalDate issueDate, LocalDate paidDate, String description) {
+    public Invoice(String invoiceNumber, User issuer, String clientName, String clientIco, BigDecimal amountWithoutVat, BigDecimal vatRate, BigDecimal amountWithVat, Currency currency, LocalDate dueDate, LocalDate issueDate, LocalDate paidDate, String description) {
         this.invoiceNumber = invoiceNumber;
-        this.status = status;
+        this.status = InvoiceStatus.DRAFT;
         this.issuer = issuer;
         this.clientName = clientName;
         this.clientIco = clientIco;
