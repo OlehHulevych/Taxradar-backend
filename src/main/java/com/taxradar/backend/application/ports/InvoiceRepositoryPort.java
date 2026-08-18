@@ -10,5 +10,4 @@ public interface InvoiceRepositoryPort {
     List<Invoice> findByIssuer(User issuer);
     List<Invoice> findByStatus(InvoiceStatus status);
     Invoice save(Invoice invoice);
-    Invoice findById();
 }
