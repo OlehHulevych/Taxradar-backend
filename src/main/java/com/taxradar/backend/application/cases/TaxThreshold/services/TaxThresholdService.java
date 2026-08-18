@@ -22,7 +22,7 @@ public class TaxThresholdService {
         this.repository = repository;
     }
 
-    public TaxThresholdResponse save(CreateTaxThresholdRequest request){
+    public TaxThresholdResponse create(CreateTaxThresholdRequest request){
         var newTaxThreshold = new TaxThreshold(request.taxYear(), ThresholdType.valueOf(request.type()), request.annualIncomeLimit(),request.monthlyPayment(),request.validFrom(),request.validTo());
         var saved = repository.save(newTaxThreshold);
         return toResponse(saved);
