@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface TaxThresholdRepositoryPort {
     Optional<TaxThreshold> findByTaxYearAndType(int taxYear, ThresholdType type);
     List<TaxThreshold> findByTaxYear(int taxYear);
+    TaxThreshold save(TaxThreshold taxThreshold);
 }
