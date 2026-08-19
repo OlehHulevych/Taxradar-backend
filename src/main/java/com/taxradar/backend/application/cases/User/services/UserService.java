@@ -5,6 +5,7 @@ import com.taxradar.backend.application.cases.User.commands.UserResponse;
 import com.taxradar.backend.application.ports.UserRepositoryPort;
 import com.taxradar.backend.domain.entities.User;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -12,18 +13,22 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class UserService {
     private final UserRepositoryPort userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepositoryPort userRepository){
+    public UserService(UserRepositoryPort userRepository, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public UserResponse createUser(CreateUserRequest request){
+        var encryptedPassword = passwordEncoder.encode(request.password());
         User user = new User(
                 request.firstName(),
                 request.lastName(),
                 request.phone(),
                 request.email(),
                 request.birthdate(),
+                encryptedPassword,
                 request.ico()
         );
         User saved = userRepository.save(user);
