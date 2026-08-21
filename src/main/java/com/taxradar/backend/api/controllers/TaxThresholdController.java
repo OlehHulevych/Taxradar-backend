@@ -1,7 +1,7 @@
 package com.taxradar.backend.api.controllers;
-import com.taxradar.backend.application.cases.TaxThreshold.commands.CreateTaxThresholdRequest;
-import com.taxradar.backend.application.cases.TaxThreshold.commands.TaxThresholdResponse;
-import com.taxradar.backend.application.cases.TaxThreshold.services.TaxThresholdService;
+import com.taxradar.backend.application.cases.taxthreshold.commands.CreateTaxThresholdRequest;
+import com.taxradar.backend.application.cases.taxthreshold.commands.TaxThresholdResponse;
+import com.taxradar.backend.application.cases.taxthreshold.services.TaxThresholdService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.taxradar.backend.application.cases.TaxThreshold.services;
+package com.taxradar.backend.application.cases.taxthreshold.services;
 
-import com.taxradar.backend.application.cases.TaxThreshold.commands.CreateTaxThresholdRequest;
-import com.taxradar.backend.application.cases.TaxThreshold.commands.TaxThresholdResponse;
+import com.taxradar.backend.application.cases.taxthreshold.commands.CreateTaxThresholdRequest;
+import com.taxradar.backend.application.cases.taxthreshold.commands.TaxThresholdResponse;
 import com.taxradar.backend.application.ports.TaxThresholdRepositoryPort;
 import com.taxradar.backend.domain.entities.TaxThreshold;
 import com.taxradar.backend.domain.enums.ThresholdType;

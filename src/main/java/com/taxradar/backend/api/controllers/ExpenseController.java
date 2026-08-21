@@ -1,8 +1,8 @@
 package com.taxradar.backend.api.controllers;
 
-import com.taxradar.backend.application.cases.Expense.Commands.CreateExpenseRequest;
-import com.taxradar.backend.application.cases.Expense.Commands.ExpenseResponse;
-import com.taxradar.backend.application.cases.Expense.Services.ExpenseService;
+import com.taxradar.backend.application.cases.expense.commands.CreateExpenseRequest;
+import com.taxradar.backend.application.cases.expense.commands.ExpenseResponse;
+import com.taxradar.backend.application.cases.expense.services.ExpenseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

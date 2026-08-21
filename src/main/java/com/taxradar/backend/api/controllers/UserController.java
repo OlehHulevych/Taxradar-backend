@@ -1,10 +1,7 @@
 package com.taxradar.backend.api.controllers;
 
-import com.taxradar.backend.application.cases.User.commands.CreateUserRequest;
-import com.taxradar.backend.application.cases.User.commands.UserResponse;
-import com.taxradar.backend.application.cases.User.services.UserService;
-import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
+import com.taxradar.backend.application.cases.user.commands.UserResponse;
+import com.taxradar.backend.application.cases.user.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

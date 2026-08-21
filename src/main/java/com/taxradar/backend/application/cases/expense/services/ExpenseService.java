@@ -1,7 +1,7 @@
-package com.taxradar.backend.application.cases.Expense.Services;
+package com.taxradar.backend.application.cases.expense.services;
 
-import com.taxradar.backend.application.cases.Expense.Commands.CreateExpenseRequest;
-import com.taxradar.backend.application.cases.Expense.Commands.ExpenseResponse;
+import com.taxradar.backend.application.cases.expense.commands.CreateExpenseRequest;
+import com.taxradar.backend.application.cases.expense.commands.ExpenseResponse;
 import com.taxradar.backend.application.ports.ExpenseRepositoryPort;
 import com.taxradar.backend.application.ports.UserRepositoryPort;
 import com.taxradar.backend.domain.entities.Expense;

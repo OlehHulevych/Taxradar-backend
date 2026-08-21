@@ -1,7 +1,7 @@
-package com.taxradar.backend.application.cases.Invoice.services;
+package com.taxradar.backend.application.cases.invoice.services;
 
-import com.taxradar.backend.application.cases.Invoice.commands.CreateInvoiceRequest;
-import com.taxradar.backend.application.cases.Invoice.commands.InvoiceResponse;
+import com.taxradar.backend.application.cases.invoice.commands.CreateInvoiceRequest;
+import com.taxradar.backend.application.cases.invoice.commands.InvoiceResponse;
 import com.taxradar.backend.application.ports.InvoiceRepositoryPort;
 import com.taxradar.backend.application.ports.UserRepositoryPort;
 import com.taxradar.backend.domain.entities.Invoice;

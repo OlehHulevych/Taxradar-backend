@@ -1,10 +1,10 @@
 package com.taxradar.backend.api.controllers;
 
-import com.taxradar.backend.application.cases.User.commands.AuthResponse;
-import com.taxradar.backend.application.cases.User.commands.CreateUserRequest;
-import com.taxradar.backend.application.cases.User.commands.LoginCommand;
-import com.taxradar.backend.application.cases.User.commands.UserResponse;
-import com.taxradar.backend.application.cases.User.services.UserService;
+import com.taxradar.backend.application.cases.user.commands.AuthResponse;
+import com.taxradar.backend.application.cases.user.commands.CreateUserRequest;
+import com.taxradar.backend.application.cases.user.commands.LoginCommand;
+import com.taxradar.backend.application.cases.user.commands.UserResponse;
+import com.taxradar.backend.application.cases.user.services.UserService;
 import com.taxradar.backend.infrastructure.services.JwtService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

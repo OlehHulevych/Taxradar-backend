@@ -1,6 +1,4 @@
-package com.taxradar.backend.application.cases.Invoice.commands;
-
-import com.taxradar.backend.domain.entities.Invoice;
+package com.taxradar.backend.application.cases.invoice.commands;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

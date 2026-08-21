@@ -1,4 +1,4 @@
-package com.taxradar.backend.infrastructure.Filters;
+package com.taxradar.backend.infrastructure.filters;
 
 import com.taxradar.backend.infrastructure.services.JwtService;
 import jakarta.servlet.FilterChain;

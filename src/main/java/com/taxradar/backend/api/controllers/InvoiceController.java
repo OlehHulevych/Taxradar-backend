@@ -1,7 +1,7 @@
 package com.taxradar.backend.api.controllers;
-import com.taxradar.backend.application.cases.Invoice.commands.CreateInvoiceRequest;
-import com.taxradar.backend.application.cases.Invoice.commands.InvoiceResponse;
-import com.taxradar.backend.application.cases.Invoice.services.InvoiceService;
+import com.taxradar.backend.application.cases.invoice.commands.CreateInvoiceRequest;
+import com.taxradar.backend.application.cases.invoice.commands.InvoiceResponse;
+import com.taxradar.backend.application.cases.invoice.services.InvoiceService;
 import com.taxradar.backend.domain.enums.InvoiceStatus;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

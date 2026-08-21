@@ -1,7 +1,7 @@
-package com.taxradar.backend.application.cases.User.services;
+package com.taxradar.backend.application.cases.user.services;
 
-import com.taxradar.backend.application.cases.User.commands.CreateUserRequest;
-import com.taxradar.backend.application.cases.User.commands.UserResponse;
+import com.taxradar.backend.application.cases.user.commands.CreateUserRequest;
+import com.taxradar.backend.application.cases.user.commands.UserResponse;
 import com.taxradar.backend.application.ports.UserRepositoryPort;
 import com.taxradar.backend.domain.entities.User;
 import jakarta.persistence.EntityNotFoundException;

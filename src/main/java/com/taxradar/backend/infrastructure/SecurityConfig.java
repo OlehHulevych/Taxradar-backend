@@ -1,6 +1,6 @@
 package com.taxradar.backend.infrastructure;
 
-import com.taxradar.backend.infrastructure.Filters.JwtAuthFilter;
+import com.taxradar.backend.infrastructure.filters.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

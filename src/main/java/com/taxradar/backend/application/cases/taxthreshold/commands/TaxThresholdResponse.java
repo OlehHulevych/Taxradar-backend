@@ -1,4 +1,4 @@
-package com.taxradar.backend.application.cases.TaxThreshold.commands;
+package com.taxradar.backend.application.cases.taxthreshold.commands;
 
 import java.math.BigDecimal;
 import java.time.Instant;

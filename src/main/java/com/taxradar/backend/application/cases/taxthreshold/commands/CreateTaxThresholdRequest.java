@@ -1,4 +1,4 @@
-package com.taxradar.backend.application.cases.TaxThreshold.commands;
+package com.taxradar.backend.application.cases.taxthreshold.commands;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

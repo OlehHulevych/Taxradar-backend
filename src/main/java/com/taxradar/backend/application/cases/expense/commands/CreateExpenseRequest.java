@@ -1,4 +1,4 @@
-package com.taxradar.backend.application.cases.Expense.Commands;
+package com.taxradar.backend.application.cases.expense.commands;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
