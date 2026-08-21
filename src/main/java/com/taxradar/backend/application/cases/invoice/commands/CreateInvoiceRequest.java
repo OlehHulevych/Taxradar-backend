@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record CreateInvoiceRequest(@NotNull Long userId,
+public record CreateInvoiceRequest(
                                    @NotBlank String invoiceNumber,
                                    @NotBlank String clientName, @NotBlank String clientIco, @NotNull @Positive
                                    BigDecimal amountWithoutVat, @NotNull @Positive BigDecimal vatRate, @NotBlank String currency,

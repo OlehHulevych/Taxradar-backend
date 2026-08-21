@@ -12,6 +12,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import java.io.IOException;
 
 @Component
@@ -31,17 +32,23 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        var token = authorizationHeader.substring(7);
-        var username = jwtService.extractUsername(token);
-        var user = userService.loadUserByUsername(username);
-        var isValid = jwtService.isTokenValid(token, user);
-        if (!isValid) {
-            filterChain.doFilter(request, response);
+        try {
+            var token = authorizationHeader.substring(7);
+            var username = jwtService.extractUsername(token);
+            var user = userService.loadUserByUsername(username);
+            var isValid = jwtService.isTokenValid(token, user);
+            if (!isValid) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+            authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+            SecurityContextHolder.getContext().setAuthentication(authToken);
+        } catch (io.jsonwebtoken.ExpiredJwtException e) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("Token expired, please login again");
             return;
         }
-        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-        authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-        SecurityContextHolder.getContext().setAuthentication(authToken);
         filterChain.doFilter(request, response);
     }
 }

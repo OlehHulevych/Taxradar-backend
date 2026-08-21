@@ -25,8 +25,8 @@ public class ExpenseService {
         this.userRepository = userRepository;
     }
 
-    public ExpenseResponse createExpense(CreateExpenseRequest request){
-        var user = userRepository.findById(request.userId()).orElseThrow(()->new EntityNotFoundException("User is not found: "+request.userId()));
+    public ExpenseResponse createExpense(CreateExpenseRequest request, Long userId){
+        var user = userRepository.findById(userId).orElseThrow(()->new EntityNotFoundException("User is not found: "+userId));
         var expense = new Expense(user, request.amount(),request.expenseDate(), Currency.valueOf(request.currency()), request.description(),
                 ExpenseCategory.valueOf(request.category()),request.isDeductible());
         var saved = repository.save(expense);

@@ -1,5 +1,6 @@
 package com.taxradar.backend.api.controllers;
 
+import com.taxradar.backend.application.cases.invoice.commands.InvoiceResponse;
 import com.taxradar.backend.application.cases.user.commands.AuthResponse;
 import com.taxradar.backend.application.cases.user.commands.CreateUserRequest;
 import com.taxradar.backend.application.cases.user.commands.LoginCommand;

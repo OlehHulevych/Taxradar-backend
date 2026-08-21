@@ -2,10 +2,12 @@ package com.taxradar.backend.api.controllers;
 import com.taxradar.backend.application.cases.invoice.commands.CreateInvoiceRequest;
 import com.taxradar.backend.application.cases.invoice.commands.InvoiceResponse;
 import com.taxradar.backend.application.cases.invoice.services.InvoiceService;
+import com.taxradar.backend.domain.entities.User;
 import com.taxradar.backend.domain.enums.InvoiceStatus;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,13 +21,14 @@ public class InvoiceController {
     }
 
     @PostMapping
-    public ResponseEntity<InvoiceResponse> createInvoice(@RequestBody @Valid CreateInvoiceRequest request){
-        var response = invoiceService.create(request);
+    public ResponseEntity<InvoiceResponse> createInvoice(@RequestBody @Valid CreateInvoiceRequest request,
+      @AuthenticationPrincipal User user){
+        var response = invoiceService.create(request, user.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     @GetMapping
-    public ResponseEntity<List<InvoiceResponse>> getByIssuer(@RequestParam Long userId){
-        var response = invoiceService.findByIssuer(userId);
+    public ResponseEntity<List<InvoiceResponse>> findByIssuer( @AuthenticationPrincipal User user){
+        var response = invoiceService.findByIssuer(user.getId());
         return ResponseEntity.ok(response);
     }
     @GetMapping("/status")

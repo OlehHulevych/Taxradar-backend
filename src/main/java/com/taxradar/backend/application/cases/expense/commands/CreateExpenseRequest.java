@@ -7,6 +7,6 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record CreateExpenseRequest(@NotNull Long userId, @NotNull @Positive BigDecimal amount, @NotBlank String currency, @NotNull
+public record CreateExpenseRequest( @NotNull @Positive BigDecimal amount, @NotBlank String currency, @NotNull
                                    LocalDate expenseDate, @NotBlank String description, @NotBlank String category, @NotNull Boolean isDeductible) {
 }

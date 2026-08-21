@@ -27,8 +27,8 @@ public class InvoiceService {
         this.userRepository = userRepository;
     }
 
-    public InvoiceResponse create(CreateInvoiceRequest request){
-        var user = userRepository.findById(request.userId()).orElseThrow(()-> new EntityNotFoundException("User not found: "+request.userId()));
+    public InvoiceResponse create(CreateInvoiceRequest request, Long userId){
+        var user = userRepository.findById(userId).orElseThrow(()-> new EntityNotFoundException("User not found: "+userId));
         BigDecimal amountWithVat = request.amountWithoutVat().multiply(BigDecimal.ONE.add(request.vatRate().divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP)));
         Invoice invoice = new Invoice(request.invoiceNumber(), user, request.clientName(), request.clientIco(),
                 request.amountWithoutVat(), request.vatRate(),amountWithVat, Currency.valueOf(request.currency()), request.dueDate(),
